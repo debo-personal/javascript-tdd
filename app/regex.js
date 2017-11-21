@@ -14,7 +14,9 @@ exports.regexAnswers = {
   },
 
   captureThreeNumbers: function(str) {
-    
+    var test = /[0-9]{3}/,
+        result = test.exec(str);
+    return result === null? false: result[0];
   },
 
   matchesPattern: function(str) {
@@ -22,6 +24,6 @@ exports.regexAnswers = {
   },
 
   isUSD: function(str) {
-    return /^\$?[1-9]\d?(?:,\d{3})*(?:\.\d{2})?$/.test( str );
+    return /^\${1}[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$/.test( str );
   }
 };
